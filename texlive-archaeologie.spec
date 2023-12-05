@@ -1,6 +1,6 @@
 Name:		texlive-archaeologie
-Version:	57090
-Release:	2
+Version:	68476
+Release:	1
 Summary:	A citation-style which covers rules of the German Archaeological Institute
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/archaeologie
