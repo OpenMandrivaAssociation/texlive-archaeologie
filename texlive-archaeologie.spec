@@ -3,7 +3,7 @@ Version:	68476
 Release:	1
 Summary:	A citation-style which covers rules of the German Archaeological Institute
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/archaeologie
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/archaeologie
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.doc.r%{version}.tar.xz
