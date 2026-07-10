@@ -1,42 +1,25 @@
-Name:		texlive-archaeologie
-Version:	68476
-Release:	1
+%global tl_name archaeologie
+%global tl_revision 79585
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.5.1
+Release:	%{tl_revision}.1
 Summary:	A citation-style which covers rules of the German Archaeological Institute
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/archaeologie
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/biblatex-contrib/archaeologie
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/archaeologie.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This citation-style covers the citation and bibliography rules
-of the German Archaeological Institute (DAI). Various options
-are available to change and adjust the outcome according to
-one's own preferences.
+This citation-style covers the citation and bibliography rules of the
+German Archaeological Institute (DAI). Various options are available to
+change and adjust the outcome according to one's own preferences.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -a * %{buildroot}%{_texmfdistdir}
-
-%files
-%doc %{_texmfdistdir}/source/latex/archaeologie
-%{_texmfdistdir}/tex/latex/archaeologie
-%{_texmfdistdir}/bibtex/bib/archaeologie
-%doc %{_texmfdistdir}/doc/latex/archaeologie
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
